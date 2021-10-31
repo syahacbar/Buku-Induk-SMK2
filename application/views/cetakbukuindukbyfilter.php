@@ -2,22 +2,19 @@
 $pdf = new Pdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 //$pdf = new Pdf('L', 'mm', array('210','330'), true, 'UTF-8', false); 
 
-$pdf->SetTitle('BUKU INDUK SISWA - '.$detail->namalengkap);
+$pdf->SetTitle('BUKU INDUK SISWA');
 $pdf->SetHeaderMargin(20);
 $pdf->SetTopMargin(10);
 $pdf->setFooterMargin(10);
-$pdf->SetAutoPageBreak(true,20);
+//$pdf->SetAutoPageBreak(true,0);
 //$pdf->SetAuthor('Author');
 //$pdf->SetDisplayMode('real', 'default');
 $pdf->setPrintHeader(false);
 $pdf->setPrintFooter(false);
-$pdf->SetMargins(20, 10, 10, true);
+$pdf->SetMargins(20, 20, 10, true);
 $pdf->SetFont('helvetica', 'B', 12);
 //$pdf->AddPage('L',array('210','330'));
 $pdf->AddPage('L','A3');
-
-
-
 $html = '
 <style>
 th{
@@ -26,10 +23,13 @@ th{
 td{
 	font-weight: normal;
 }
-</style>
+</style>';
+foreach ($allsiswa AS $detail) {
+$html .= '
+<center>
 <table border="0" width="100%">
 	<tr>
-		<td>
+		<td width="50%">
 			<table border="0">
 				<tr>
 					<th width="4%">I.</th>
@@ -282,15 +282,11 @@ td{
 					<td colspan="2">Tempat dan Tanggal Lahir</td>
 					<td>: '.$detail->ttl_ayah.'</td>
 				</tr>
-			</table>
-		</td>
-		<td>
-			<table border="0"  class="table table-striped table-bordered" style="width:100%">
 				<tr>
-					<td width="4%"></td>
-					<td width="4%">25.</td>
-					<td colspan="2" width="34%">Agama</td>
-					<td width="58%">: '.$detail->agama_ayah.'</td>
+					<td></td>
+					<td>25.</td>
+					<td colspan="2">Agama</td>
+					<td>: '.$detail->agama_ayah.'</td>
 				</tr>
 				<tr>
 					<td></td>
@@ -298,11 +294,15 @@ td{
 					<td colspan="2">Kewarganegaraan</td>
 					<td>: '.$detail->kewarganegaraan_ayah.'</td>
 				</tr>
+			</table>
+		</td>
+		<td>
+			<table border="0"  class="table table-striped table-bordered" style="width:100%">
 				<tr>
-					<td></td>
-					<td>27.</td>
-					<td colspan="2">Pendidikan Terakhir</td>
-					<td>: '.$detail->pendidikan_ayah.'</td>
+					<td width="4%"></td>
+					<td width="4%">27.</td>
+					<td colspan="2" width="34%">Pendidikan Terakhir</td>
+					<td width="58%">: '.$detail->pendidikan_ayah.'</td>
 				</tr>
 				<tr>
 					<td></td>
@@ -567,8 +567,10 @@ td{
 		</td>
 	</tr>
 </table>
-';
+</center>';
+}
 $pdf->writeHTML($html, true, false, true, false, '');
-$pdf->Output('BUKU INDUK SISWA - '.$detail->namalengkap.'.pdf', 'I');
+
+$pdf->Output('BUKU INDUK SISWA.pdf', 'I');
 
 ?>

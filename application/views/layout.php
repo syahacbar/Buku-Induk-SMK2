@@ -298,11 +298,11 @@
                         </li>
                         
                         <li>
-                            <a href="<?php echo site_url('welcome');?>"><i class="fa fa-table fa-fw"></i> Data</a>
+                            <a href="<?php echo site_url('welcome/data');?>"><i class="fa fa-table fa-fw"></i> Data</a>
                         </li>
                         
                         <li>
-                            <a href="#"><i class="fa fa-print fa-fw"></i> Cetak</a>
+                            <a href="<?php echo site_url('welcome/filtercetak');?>"><i class="fa fa-print fa-fw"></i> Cetak</a>
                         </li>
                        
                        
