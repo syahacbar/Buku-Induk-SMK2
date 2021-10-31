@@ -18,7 +18,9 @@ class Welcome extends CI_Controller {
 
 	public function detail($idsiswa)
 	{
+		$this->load->library('Pdf');
+
 		$data['detail'] = $this->M_bukuinduk->get_by_id($idsiswa);
-		$this->load->view('bukuinduk',$data);
+		$this->load->view('cetakbukuinduk',$data);
 	}
 }

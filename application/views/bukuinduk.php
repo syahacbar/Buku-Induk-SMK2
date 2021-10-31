@@ -6,7 +6,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Buku Induk</title>
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='' rel='stylesheet'>
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
@@ -119,7 +118,7 @@
 <body class='snippet-body'>
     <div class="container">
         <div class="row header">
-           <img src="<?php echo base_url('upload/foto/').$detail->nipd.'.jpg';?>" alt="foto_pas">
+            <img src="https://jasaeditfoto.com/wp-content/uploads/2017/04/mengganti-warna-background-pas-foto.jpg" alt="foto_pas">
         </div>
         <div class="row">
             <div class="col-md-6">
@@ -743,7 +742,7 @@
                     </tbody>
                 </table>
                 <div class="row footer">
-                    <img src="<?php echo base_url('upload/foto/').$detail->nipd.'.jpg';?>" alt="foto_pas">
+                    <img src="<?php echo base_url('upload/foto/').$detail->nipd;?>" alt="foto_pas">
                 </div>
             </div>
         </div>
