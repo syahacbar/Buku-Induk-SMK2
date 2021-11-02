@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Aplikasi Buku Induk SMKN2 Manokwari</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url();?>/assets/startbootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">

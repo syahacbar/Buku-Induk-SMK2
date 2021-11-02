@@ -11,12 +11,10 @@ $pdf->SetAutoPageBreak(true,20);
 //$pdf->SetDisplayMode('real', 'default');
 $pdf->setPrintHeader(false);
 $pdf->setPrintFooter(false);
-$pdf->SetMargins(20, 10, 10, true);
+$pdf->SetMargins(20, 10, 5, true);
 $pdf->SetFont('helvetica', 'B', 12);
 //$pdf->AddPage('L',array('210','330'));
 $pdf->AddPage('L','A3');
-
-
 
 $html = '
 <style>
@@ -29,7 +27,7 @@ td{
 </style>
 <table border="0" width="100%">
 	<tr>
-		<td>
+		<td width="45%">
 			<table border="0">
 				<tr>
 					<th width="4%">I.</th>
@@ -284,7 +282,7 @@ td{
 				</tr>
 			</table>
 		</td>
-		<td>
+		<td width="45%">
 			<table border="0"  class="table table-striped table-bordered" style="width:100%">
 				<tr>
 					<td width="4%"></td>
@@ -563,11 +561,14 @@ td{
 				</tr>
 
 			</table>
-
+		</td>
+		<td width="10%">';
+if($detail->foto == NULL) { $foto = 'default2x3.jpg'; } else { $foto = $detail->foto; }
+$html .= '
+			<img src="upload/foto/'.$foto.'">
 		</td>
 	</tr>
-</table>
-';
+</table>';
 $pdf->writeHTML($html, true, false, true, false, '');
 $pdf->Output('BUKU INDUK SISWA - '.$detail->namalengkap.'.pdf', 'I');
 
