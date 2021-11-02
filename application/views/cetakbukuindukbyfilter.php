@@ -6,7 +6,7 @@ $pdf->SetTitle('BUKU INDUK SISWA');
 $pdf->SetHeaderMargin(20);
 $pdf->SetTopMargin(10);
 $pdf->setFooterMargin(10);
-$pdf->SetAutoPageBreak(true,0);
+$pdf->SetAutoPageBreak(true,20);
 //$pdf->SetAuthor('Author');
 //$pdf->SetDisplayMode('real', 'default');
 $pdf->setPrintHeader(false);
