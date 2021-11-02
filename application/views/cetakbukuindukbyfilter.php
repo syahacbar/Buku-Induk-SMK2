@@ -2,7 +2,7 @@
 $pdf = new Pdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 //$pdf = new Pdf('L', 'mm', array('210','330'), true, 'UTF-8', false); 
 
-$pdf->SetTitle('BUKU INDUK SISWA');
+$pdf->SetTitle('BUKU INDUK SISWA '.strtoupper($kelas));
 $pdf->SetHeaderMargin(20);
 $pdf->SetTopMargin(10);
 $pdf->setFooterMargin(10);
@@ -576,6 +576,6 @@ $html .= '
 }
 $pdf->writeHTML($html, true, false, true, false, '');
 
-$pdf->Output('BUKU INDUK SISWA.pdf', 'I');
+$pdf->Output('BUKU INDUK SISWA '.strtoupper($kelas).'.pdf', 'I');
 
 ?>

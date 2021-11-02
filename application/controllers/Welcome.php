@@ -32,6 +32,7 @@ class Welcome extends CI_Controller {
 	{
 		$kelas = $this->input->post('filterkelas');
 		$data['allsiswa'] = $this->M_bukuinduk->get_all($kelas);
+		$data['kelas'] = $kelas;
 		$this->load->view('cetakbukuindukbyfilter',$data);		
 	}
 
