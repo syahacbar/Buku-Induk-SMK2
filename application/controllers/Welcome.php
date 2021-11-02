@@ -64,6 +64,7 @@ class Welcome extends CI_Controller {
 				'sdrangkat' => $this->input->post('sdrangkat'),
 				'anakyatim' => $this->input->post('anakyatim'),
 				'bahasa' => $this->input->post('bahasa'),
+				'foto' => $this->input->post('nipd').'.jpg',
 			);
 
 			$datatempattinggal = array(
